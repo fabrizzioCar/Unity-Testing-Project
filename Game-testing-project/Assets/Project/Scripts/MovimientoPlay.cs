@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class MovimientoPlay : MonoBehaviour
 {
     // Start is called before the first frame update
 
@@ -22,7 +22,7 @@ public class NewBehaviourScript : MonoBehaviour
 
     // Update is called once per frame
     void FixedUpdate()
-    {
+    {   
         if (Input.GetKey("d") || Input.GetKey("right"))
         {
             Personaje.velocity = new Vector2(caminar, Personaje.velocity.y);
@@ -36,17 +36,18 @@ public class NewBehaviourScript : MonoBehaviour
             Personaje.velocity = new Vector2(0, Personaje.velocity.y);
         }
         //falta incluirla condicion de salto
-        if (Input.GetKey("z"))
+        if (Input.GetKey("space"))
         {
             Personaje.velocity = new Vector2(Personaje.velocity.x, saltar);
         }
+        
         if (MejorSalto)
         {
             if (Personaje.velocity.y<0)
             {
                 Personaje.velocity += Vector2.up * Physics.gravity.y * (fallMultiplayer)* Time.deltaTime;
             }
-            if (Personaje.velocity.y>0 && !Input.GetKey("z"))
+            if (Personaje.velocity.y>0 && !Input.GetKey("space"))
             {
                 Personaje.velocity += Vector2.up * Physics.gravity.y * (lowMultiplayer)* Time.deltaTime;
             }
