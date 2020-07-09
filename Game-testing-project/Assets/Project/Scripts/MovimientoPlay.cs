@@ -6,18 +6,20 @@ public class MovimientoPlay : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    RigidBody2D Personaje;
+    Rigidbody2D Personaje;
 
-    [SerializeField]
     public float caminar=2;
     public float saltar=3;
     public bool MejorSalto = false;
     public float fallMultiplayer = 0.5f;
-    public float lowmultiplayer = 1f;
+    public float lowMultiplayer = 1f;
     
+    public SpriteRenderer spriterenderer;
+    public Animator anima;
     void Start()
     {
-        Personaje = GetComponent<RigidBody2D>();    
+        Personaje = GetComponent<Rigidbody2D>(); 
+          
     }
 
     // Update is called once per frame
@@ -26,19 +28,26 @@ public class MovimientoPlay : MonoBehaviour
         if (Input.GetKey("d") || Input.GetKey("right"))
         {
             Personaje.velocity = new Vector2(caminar, Personaje.velocity.y);
+            spriterenderer.flipX = false; 
+            anima.SetBool("Correr",true);
         }
         else if(Input.GetKey("a") || Input.GetKey("left"))
         {
             Personaje.velocity = new Vector2(-caminar, Personaje.velocity.y);
+            spriterenderer.flipX = true; 
+            anima.SetBool("Correr",true);
         }
         else
         {
             Personaje.velocity = new Vector2(0, Personaje.velocity.y);
+            anima.SetBool("Correr",false);
+            anima.SetBool("Saltar",false);
         }
         //falta incluirla condicion de salto
-        if (Input.GetKey("space"))
+        if (Input.GetKey("space") && Colided.suelover)
         {
             Personaje.velocity = new Vector2(Personaje.velocity.x, saltar);
+            anima.SetBool("Saltar",true);
         }
         
         if (MejorSalto)
