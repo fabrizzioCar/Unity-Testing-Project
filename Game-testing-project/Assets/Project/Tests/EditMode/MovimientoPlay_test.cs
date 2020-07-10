@@ -13,16 +13,11 @@ namespace Tests
         public void MovimientoPlay_testSimplePasses()
         {
             // Use the Assert class to test conditions
+            Assert.AreEqual(2, new MovimientoPlay().caminar);
+            Assert.AreEqual(3, new MovimientoPlay().saltar);
+            Assert.AreEqual(0.5f, new MovimientoPlay().fallMultiplayer);
+            Assert.AreEqual(1f, new MovimientoPlay().lowMultiplayer);
         }
 
-        // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
-        // `yield return null;` to skip a frame.
-        [UnityTest]
-        public IEnumerator MovimientoPlay_testWithEnumeratorPasses()
-        {
-            // Use the Assert class to test conditions.
-            // Use yield to skip a frame.
-            yield return null;
-        }
     }
 }
