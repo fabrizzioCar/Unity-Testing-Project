@@ -28,5 +28,15 @@ namespace Tests
             Debug.Log(SceneManager.GetActiveScene().name);
             Assert.AreEqual( expected, actual);
         }
+        [UnityTest]
+        public IEnumerator QuitGame()
+        {
+            var GameObject = new GameObject();
+            MainMenu main = new MainMenu();
+            main.QuitGame();
+            yield return new WaitForSeconds(2.0f);
+            Assert.True(main == null);
+            Debug.Log("Game over");
+        }
     }
 }
