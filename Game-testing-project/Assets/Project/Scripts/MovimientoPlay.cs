@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MovimientoPlay : MonoBehaviour
 {
-    // Start is called before the first frame update
+   
 
     Rigidbody2D Personaje;
 
@@ -64,7 +64,5 @@ public class MovimientoPlay : MonoBehaviour
             }
         }
     }
-    void OnBecameInvisible(){
-        transform.position = new Vector2(posX,posY);
-    }
+    
 }
