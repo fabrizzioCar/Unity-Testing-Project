@@ -30,6 +30,6 @@ public class gameove : MonoBehaviour
     public void QuitGame()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Nivel1");
+        SceneManager.LoadScene("Menu1");
     }
 }
