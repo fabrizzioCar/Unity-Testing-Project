@@ -22,11 +22,10 @@ namespace Tests
         [UnityTest]
         public IEnumerator ContinueGame()
         {
-            // Use the Assert class to test conditions.
-            // Use yield to skip a frame.
-            //var GameObject = new GameObject();
+            
             PauseMenu pauseMenu = new PauseMenu();
-            pauseMenu.Pause();
+            Debug.Log(PauseMenu.GameIsPaused);
+            //pauseMenu.Pause();
             //pauseMenu.Resume();
             yield return new WaitForSeconds(2.0f);
             //Assert.True( Time.timeScale == 1f );
