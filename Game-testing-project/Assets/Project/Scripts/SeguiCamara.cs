@@ -5,7 +5,7 @@ using UnityEngine;
 public class SeguiCamara : MonoBehaviour
 {
     // Start is called before the first frame update
-   public GameObject follow;
+   	public GameObject follow;
 	public Vector2  Mincampo, Maxcampo;
 
 	void Start () {

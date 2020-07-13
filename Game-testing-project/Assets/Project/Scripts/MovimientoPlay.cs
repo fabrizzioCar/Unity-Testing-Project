@@ -14,12 +14,14 @@ public class MovimientoPlay : MonoBehaviour
     public float fallMultiplayer = 0.5f;
     public float lowMultiplayer = 1f;
     
+    float posX, posY;
     public SpriteRenderer spriterenderer;
     public Animator anima;
     void Start()
     {
         Personaje = GetComponent<Rigidbody2D>(); 
-          
+        posX = transform.position.x;
+		posY = transform.position.y;
     }
 
     // Update is called once per frame
@@ -61,5 +63,8 @@ public class MovimientoPlay : MonoBehaviour
                 Personaje.velocity += Vector2.up * Physics.gravity.y * (lowMultiplayer)* Time.deltaTime;
             }
         }
+    }
+    void OnBecameInvisible(){
+        transform.position = new Vector2(posX,posY);
     }
 }
