@@ -24,7 +24,7 @@ namespace Tests
             //Debug.Log("?");
             //keycoll.DissapearKey();
             //yield return new WaitForSeconds(2f);
-            yield return null;
+            yield return new WaitForSeconds(2.0f);
             //Assert.True(keycoll.GetComponent<SpriteRenderer>().enabled==false);
         }
     }
