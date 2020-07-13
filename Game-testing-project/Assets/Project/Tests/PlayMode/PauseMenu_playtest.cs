@@ -4,6 +4,7 @@ using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
 using UnityEngine.SceneManagement;
+using System.Windows;
 
 namespace Tests
 {
@@ -12,11 +13,35 @@ namespace Tests
         [UnityTest]
         public IEnumerator PauseGame()
         {
-            var GameObject = new GameObject();
-            PauseMenu pauseMenu = new PauseMenu();
+            var gameObject = new GameObject();
             
-            yield return new WaitForSeconds(2.0f);
-            //Assert.True(PauseMenu.GameIsPaused==false);
+            
+            Scene s = SceneManager.GetSceneByName("Scene1");
+            var canvas = GameObject.Find("Canvas_lvl1");
+            //SceneManager.SetActiveScene(s);
+            
+            var pauseMenu = new PauseMenu();
+            pauseMenu.pauseMenuUI = GameObject.Find("PauseMenu_lvl1");
+            
+            //pauseMenu.Pause();
+            Debug.Log("funciona");
+            //pauseMenu.Resume();
+            
+
+
+            
+            
+            yield return new WaitForSeconds(5);
+            AfterEveryTest();
+
+        }
+        [TearDown]
+        public void AfterEveryTest()
+        {
+            foreach (var gameObject in GameObject.FindGameObjectsWithTag("PauseMenu"))
+                Object.Destroy(gameObject)
+            ;
+
 
         }
         [UnityTest]
@@ -32,8 +57,7 @@ namespace Tests
             //Assert.True( !PauseMenu.GameIsPaused );
             //Assert.True(pauseMenu.pauseMenuUI.activeSelf == false);
             //Debug.Log("test");
-            
-          
+            AfterEveryTest(); 
         }
         [UnityTest]
         public IEnumerator LoadMainMenu()
@@ -45,6 +69,8 @@ namespace Tests
             string expected = "Menu1";
             string actual = SceneManager.GetActiveScene().name;
             Assert.AreEqual( expected, actual);
+            
+            AfterEveryTest();
         }
         [UnityTest]
         public IEnumerator QuitGame()
@@ -54,6 +80,7 @@ namespace Tests
             pauseMenu.QuitGame();
             yield return new WaitForSeconds(2.0f);
             Assert.True(pauseMenu==null);
+            AfterEveryTest();
         }
         
     }

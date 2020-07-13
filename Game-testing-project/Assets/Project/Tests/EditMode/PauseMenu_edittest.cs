@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
+using UnityEngine.SceneManagement;
 
 namespace Tests
 {
@@ -16,6 +17,14 @@ namespace Tests
             Assert.True( Time.timeScale == 1f);
             //pauseMenu.Pause();
             //pauseMenu.Resume();
+        }
+        [Test]
+        public void Pause_Test()
+        {
+            GameObject gameObject= new GameObject();
+            SceneManager sceneManager = gameObject.GetComponent<SceneManager>() ;
+            SceneManager.LoadScene("Scene1");
+            
         }
 
     }
