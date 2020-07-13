@@ -8,9 +8,14 @@ public class KeyCollected : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            GetComponent<SpriteRenderer>().enabled = false;
-            gameObject.transform.GetChild(0).gameObject.SetActive(true);
-            Destroy(gameObject, 0.5f);
+            DissapearKey();
         }
+    }
+
+    public void DissapearKey()
+    {
+        GetComponent<SpriteRenderer>().enabled = false;
+        gameObject.transform.GetChild(0).gameObject.SetActive(true);
+        Destroy(gameObject, 0.5f);
     }
 }
