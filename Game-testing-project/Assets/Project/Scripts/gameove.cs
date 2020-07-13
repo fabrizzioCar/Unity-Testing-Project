@@ -21,10 +21,10 @@ public class gameove : MonoBehaviour
             Time.timeScale = 1f;
         }
     }
-    public void LoadMenu()
+    public void Resume()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Menu1");
+        SceneManager.LoadScene("Nivel1");
     }
 
     public void QuitGame()
