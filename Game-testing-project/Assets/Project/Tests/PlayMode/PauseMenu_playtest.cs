@@ -26,7 +26,7 @@ namespace Tests
             // Use yield to skip a frame.
             //var GameObject = new GameObject();
             PauseMenu pauseMenu = new PauseMenu();
-            //pauseMenu.Pause();
+            pauseMenu.Pause();
             //pauseMenu.Resume();
             yield return new WaitForSeconds(2.0f);
             //Assert.True( Time.timeScale == 1f );
