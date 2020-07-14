@@ -17,13 +17,8 @@ namespace Tests
             var gameObject = new GameObject();
             var keycoll = GameObject.Find("key");
             var keycollec = new KeyCollected();
-            keycollec.DissapearKey();
-            //KeyCollected keycoll= new KeyCollected();
-
-            //Compoment key=GameObject.GetComponent("key");
-            //Debug.Log("?");
-            //keycoll.DissapearKey();
-            //yield return new WaitForSeconds(2f);
+            
+            
             yield return new WaitForSeconds(2.0f);
             //Assert.True(keycoll.GetComponent<SpriteRenderer>().enabled==false);
         }
