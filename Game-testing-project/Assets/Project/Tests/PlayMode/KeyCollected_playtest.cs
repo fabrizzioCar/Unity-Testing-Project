@@ -15,9 +15,9 @@ namespace Tests
         public IEnumerator KeyCollected_playtestWithEnumeratorPasses()
         {
             var gameObject = new GameObject();
-            //var keycoll = GameObject.Find("key");
-            var keycoll = new KeyCollected();
-            keycoll.DissapearKey();
+            var keycoll = GameObject.Find("key");
+            var keycollec = new KeyCollected();
+            keycollec.DissapearKey();
             //KeyCollected keycoll= new KeyCollected();
 
             //Compoment key=GameObject.GetComponent("key");
