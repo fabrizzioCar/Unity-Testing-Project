@@ -9,7 +9,7 @@ public class MovimientoPlay : MonoBehaviour
     Rigidbody2D Personaje;
 
     public float caminar=2;
-    public float saltar=3;
+    public float saltar=4;
     public bool MejorSalto = false;
     public float fallMultiplayer = 0.5f;
     public float lowMultiplayer = 1f;
@@ -43,13 +43,13 @@ public class MovimientoPlay : MonoBehaviour
         {
             Personaje.velocity = new Vector2(0, Personaje.velocity.y);
             anima.SetBool("Correr",false);
-            anima.SetBool("Saltar",false);
+            anima.SetBool("Salto",false);
         }
         //falta incluirla condicion de salto
         if (Input.GetKey("space") && Colided.suelover)
         {
             Personaje.velocity = new Vector2(Personaje.velocity.x, saltar);
-            anima.SetBool("Saltar",true);
+            anima.SetBool("Salto",true);
         }
         
         if (MejorSalto)
