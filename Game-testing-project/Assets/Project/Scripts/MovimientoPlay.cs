@@ -9,7 +9,7 @@ public class MovimientoPlay : MonoBehaviour
     Rigidbody2D Personaje;
 
     public float caminar=2;
-    public float saltar=4;
+    public float saltar=5;
     public bool MejorSalto = false;
     public float fallMultiplayer = 0.5f;
     public float lowMultiplayer = 1f;
